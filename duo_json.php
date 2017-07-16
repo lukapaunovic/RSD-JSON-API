@@ -2,7 +2,7 @@
 
 include('simple_html_dom.php');
 $dom = new DomDocument;
-$dom->loadHtmlFile('/home/hostleo/public_html/come/nbs.html');
+$dom->loadHtmlFile('nbs.html');
 
 $xpath = new DomXPath($dom);
 
