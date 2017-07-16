@@ -4,7 +4,7 @@ What you need to use this api?
 You should setup cron to run cron.php once a day so it updates nbs.html file with all its currencies. This way we will prevent requests to NBS every time you need info about exchange rates.
 
 Sample output when accessing duo_json.php
-
+```
 [
     {
         "code": "EUR",
@@ -67,11 +67,12 @@ Sample output when accessing duo_json.php
         "rate": "105.6318"
     }
 ]
-
+```
 As you can see you are getting how much is 1 EUR, 1 AUD, 1 CAD etc in serbian dinars.
 
 This is how you use API:
-
+```
+<?php
 $str = file_get_contents('http://example.com/duo_json.php');
 $json = json_decode($str, true); // decode the JSON into an associative array
 
@@ -82,6 +83,6 @@ echo $json[0]['code']; //Outputs currency code: EUR
 echo $json[1]['rate']; //Outputs rate: 81.7670
 echo $json[1]['name']; //Outputs currency name: Australija
 echo $json[1]['code']; //Outputs currency code: AUD
-
+```
 And so on...
 
