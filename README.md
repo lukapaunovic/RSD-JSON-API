@@ -80,7 +80,7 @@ This is how you use the API:
 $str = file_get_contents('http://example.com/duo_json.php');
 $json = json_decode($str, true); // decode the JSON into an associative array
 
-$array = json_decode($json);
+
 function getRatebyCode($arr, $code){
     foreach($arr as $item){
         if ($item->code == $code)
@@ -88,6 +88,6 @@ function getRatebyCode($arr, $code){
     }
 }
             
-$usd_rate = getRatebyCode($array, "USD"); // Rate for USD
+$usd_rate = getRatebyCode($json, "USD"); // Rate for USD
 ```
 
