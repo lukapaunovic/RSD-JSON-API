@@ -1,6 +1,6 @@
 # Serbian dinar (RSD) exchange rates JSON API
 
-## Setup
+### Setup
 
 Edit `cron.php` file and set full path to `nbs.html` file.<br>
 Create daily cronjob for `cron.php`.<br>
@@ -8,7 +8,7 @@ Every time cron runs new rates will be stored in `nbs.html` file.
 
 This way we will prevent sending requests to the NBS each time someone sends a request to the API.
 
-## Sample API output - duo_json.php
+### Sample API output - duo_json.php
 ```
 [
     {
@@ -161,7 +161,7 @@ This way we will prevent sending requests to the NBS each time someone sends a r
 ]
 ```
 
-## Usage
+### Usage
 
 This is how you use the API:
 ```
