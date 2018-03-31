@@ -23,7 +23,13 @@ foreach ($xpath->query('//tbody[@id="index:spisakDeviz:tbody_element"]/tr') as $
 if (is_array($data) || is_object($data)) {
 	$result = array();
 	foreach($data as $row) { 
-		$arr = array("code"=>$row['OZNAKA VALUTE'], "name"=>$row['NAZIV ZEMLJE'], "rate"=>$row['PRODAJNI KURS']);
+	    $sell_rate = $row['PRODAJNI KURS'];
+	    $buy_rate = $row['KUPOVNI KURS'];
+	    if(isset($_GET['to_original'])) {
+	        $sell_rate = 1/$row['PRODAJNI KURS'];
+	        $buy_rate = 1/$row['KUPOVNI KURS'];
+	    }
+		$arr = array("currency_code"=>$row['ŠIFRA VALUTE'], "country_name"=>$row['NAZIV ZEMLJE'], "currency_name"=>$row['OZNAKA VALUTE'], "sell_rate"=>$sell_rate, "buy_rate"=>$buy_rate);
 		array_push($result,$arr);
 	}
 	header('Content-Type: application/json');
