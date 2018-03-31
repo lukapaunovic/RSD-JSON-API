@@ -1,8 +1,12 @@
 # RSD-JSON-API
 
-You should setup a cron job to run cron.php once a day so it updates nbs.html file with newest exchange rates. This way we will prevent sending requests to NBS every time you send request to API.
+## Setup
 
-Sample output when accessing duo_json.php
+You need to set daily cronjob for cron.php. Every time cron runs new rates will be stored in nbs.html file.
+Before doing that, edit cron.php and define full path to nbs.html file.
+This way we will prevent sending requests to the NBS each time someone send a request to the API.
+
+## Sample API output - duo_json.php
 ```
 [
     {
@@ -154,6 +158,9 @@ Sample output when accessing duo_json.php
     }
 ]
 ```
+
+## Usage
+
 As you can see you are getting how much is one unit of foreign currency in Serbian dinars (RSD).
 If you want to see how much is one unit of Serbian dinar (1 RSD) add `?to_original=yes` to api url.
 This is how you use the API:
