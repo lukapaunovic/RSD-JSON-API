@@ -1,4 +1,4 @@
-# RSD-JSON-API
+# Serbian dinar (RSD) exchange rates JSON API
 
 ## Setup
 
