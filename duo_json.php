@@ -33,5 +33,6 @@ if (is_array($data) || is_object($data)) {
 		array_push($result,$arr);
 	}
 	header('Content-Type: application/json');
+	header("Access-Control-Allow-Origin: *");
 	echo json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 }
